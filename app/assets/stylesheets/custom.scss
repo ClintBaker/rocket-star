@@ -1,0 +1,15 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.footer {
+  margin-top: 100px;
+  border-top: solid 1px #222222;
+  background-color: gray;
+  padding-bottom: 15px;
+
+  
+  ul {
+  list-style-type: none;
+  }
+}
