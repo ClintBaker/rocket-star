@@ -1,5 +1,12 @@
 <div class="jumbotron container" align="center">
   <h1>Rocket Supply</h1>
   <p>A proud supplier of Tech Tac Slimline Tubing Anchor Catchers</p>
-  <%= link_to "Sign up", '#', class: 'btn btn-primary btn-lg' %>
+
+  <% if user_signed_in? %>
+  <div>
+    <h2><%= current_user.email %></h2>
+  </div>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+  <% end %>
 </div>
