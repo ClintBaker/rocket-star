@@ -1,0 +1,16 @@
+<div class="well" align="center">
+      <div class="contact-list">
+        <h3 class="logo-brand", style="color: #222222 !important;"><%= @company.name %></h3>
+        <p><%= @company.address %>, <%= @company.state %>, <%= @company.zipcode %></p>
+        <p><%= link_to "#{@company.website}", "http://#{@company.website}" %></p>
+        <p><%= @company.phone %></p>
+      </div>
+  <br />
+  <% if @company.user == current_user %>
+    <div>
+      <%= link_to "Edit company", edit_company_path(@company), class: "btn btn-primary" %>
+      <%= link_to "Delete company", company_path(@company), method: :delete, confirm: "Are you sure?", class: "btn btn-danger" %>
+    </div>
+  <% end %>
+</div>
+<div align="center">[ <%= link_to "Back to Companies page", companies_path %> ]</div>

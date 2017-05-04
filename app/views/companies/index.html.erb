@@ -1,0 +1,10 @@
+<div align="center" class="container">
+  <h1>All companies</h1>
+  <br />
+  <% @companies.each do |c| %>
+    <div class="well">
+      <h3><%= link_to "#{c.name}", c  %></h3>
+      <p><%= c.user.email %></p>
+    </div>
+  <% end %>
+</div>

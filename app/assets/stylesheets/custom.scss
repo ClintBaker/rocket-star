@@ -5,11 +5,32 @@
 .footer {
   margin-top: 100px;
   border-top: solid 1px #222222;
-  background-color: gray;
+  background-color: #222222;
   padding-bottom: 15px;
+  color: white;
+  border-radius: 3px;
 
-  
+
   ul {
   list-style-type: none;
   }
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold !important;
+  color: white !important;
+  font-size: 1.7em;
+}
+
+.logo-brand {
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold !important;
+  color: white !important;
+}
+
+.contact-list {
+  list-style-type: none;
 }

@@ -1,0 +1,44 @@
+<div class="col-md-6 col-md-offset-3">
+    <%= form_for(@company) do |f| %>
+
+      <%= render 'shared/error_messages' %>
+
+      <div class="form-group">
+        <strong>Company </strong><%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :state %>
+        <%= f.text_field :state, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :zipcode %>
+        <%= f.number_field :zipcode, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :country %>
+        <%= f.text_field :country, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :website %>
+        <%= f.text_field :website, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <strong>Contact </strong><%= f.label :phone %>
+        <%= f.text_field :phone, class: "form-control" %>
+      </div>
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary form-control" %>
+
+    <% end %>
+  </div>
