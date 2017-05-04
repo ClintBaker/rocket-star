@@ -1,6 +1,31 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$grey : #f5f5f5;
+$purple: #b800ff;
+
+/*Layout and colors*/
+
+.rocket-body {
+  background: url(space.jpg) no-repeat center center fixed;
+  background-size: cover;
+  padding-top: 70px !important;
+}
+
+body {
+  background-color: $grey !important;
+  padding-top: 70px !important
+}
+
+.well {
+  background-color: white !important;
+}
+
+.jumbotron {
+  background-color: white !important;
+}
+
+/*footer*/
 
 .footer {
   margin-top: 100px;
@@ -16,6 +41,16 @@
   }
 }
 
+.footer-logo {
+  height: 35px;
+}
+
+/*navbar*/
+
+.navbar {
+  border-bottom: 2px solid $purple;
+}
+
 .navbar-brand {
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -23,6 +58,8 @@
   color: white !important;
   font-size: 1.7em;
 }
+
+/*logos and branding*/
 
 .logo-brand {
   text-transform: uppercase;
@@ -34,3 +71,20 @@
 .contact-list {
   list-style-type: none;
 }
+
+.brand {
+  text-transform: uppercase;
+  letter-spacing: -2.5px;
+  font-weight: bold;
+}
+
+.btn-purple {
+  background-color: $purple !important;
+  color: white;
+}
+
+
+
+
+
+

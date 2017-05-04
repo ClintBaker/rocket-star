@@ -5,6 +5,7 @@
         <p><%= link_to "#{@company.website}", "http://#{@company.website}" %></p>
         <p><%= @company.phone %></p>
       </div>
+    <div>
   <br />
   <% if @company.user == current_user %>
     <div>
@@ -13,4 +14,21 @@
     </div>
   <% end %>
 </div>
+
+
+</div>
+<br />
+<div align="center">
+  <h1>Products</h1>
+      <% @company.products.each do |p| %>
+        <div class="col-md-4">
+          <div class="well">
+            <h3><%= link_to "#{p.name}", p  %></h3>
+            <p><strong>$<%= p.price %></strong></p>
+            <p><%= p.description %></p>
+          </div>
+        </div>
+      <% end %>
+</div>
+
 <div align="center">[ <%= link_to "Back to Companies page", companies_path %> ]</div>

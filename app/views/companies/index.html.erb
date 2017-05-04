@@ -2,9 +2,17 @@
   <h1>All companies</h1>
   <br />
   <% @companies.each do |c| %>
-    <div class="well">
-      <h3><%= link_to "#{c.name}", c  %></h3>
-      <p><%= c.user.email %></p>
+    <div class="col-md-6 col-xs-12">
+      <strong class="brand" style="float: right !important; padding-right: 10px; letter-spacing: -1px;"><%= c.state %></strong>
+      <div class="well">
+        <h3><%= link_to "#{c.name}", c  %></h3>
+        <p><%= "#{c.address}, #{c.state}, #{c.zipcode}" %></p>
+        <% if c.products.size > 0 %>
+          <p><strong>Official Rocket Supplier, carrying <%= c.products.size %> products</strong></p>
+        <% else %>
+          <p>Joined <%= time_ago_in_words(c.created_at) %> ago</p>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>

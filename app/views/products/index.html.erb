@@ -1,0 +1,14 @@
+<div align="center">
+  <h1>Products</h1>
+  <br />
+  <% @products.each do |p| %>
+    <div class="col-md-4 col-xs-12">
+      <div class="well">
+        <h3><%= link_to "#{p.name}", p  %></h3>
+        <p><strong>$<%= p.price %></strong></p>
+        <p><%= p.description %></p>
+        <p><small>Supplied by: </small> <%= link_to "#{p.company.name}", p.company %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

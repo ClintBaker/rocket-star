@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-fixed-top navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,6 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <%= image_tag("rocket.png", alt: "Rocket logo", id: "rocket-logo", class: "navbar-brand") %>
       <%= link_to "Rocket Supply", root_path, class: "navbar-brand" %>
     </div>
 
@@ -20,7 +21,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><%= link_to "All products", "#" %></li>
+            <li><%= link_to "All products", products_path %></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to "Anchors", "#" %></li>
             <li><%= link_to "Pumps", "#" %></li>
@@ -38,11 +39,12 @@
               <% current_user.companies.each do |c| %>
                 <li><%= link_to "#{c.name}", c %></li>
               <% end %>
-            <% else %>
-              <li><%= link_to "New company", new_company_path %></li>
             <% end %>
             <li role="separator" class="divider"></li>
             <li><%= link_to "Manage account", edit_user_registration_path(current_user) %></li>
+            <% if current_user.companies.size > 0 %>
+              <li><%= link_to "New product", new_product_path %></li>
+            <% end %>
             <li><%= link_to "New company", new_company_path %></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to "Sign out", destroy_session_path(current_user), method: :delete, confirm: 'Are you sure?' %></li>

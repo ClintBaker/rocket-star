@@ -1,0 +1,9 @@
+<% provide(:title, "New product") %>
+<% provide(:button_text, "Create") %>
+<% provide(:obj, "#{@product}") %>
+<div class="row well">
+  <h1 align="center">New product</h1>
+  <%= render 'products/form' %>
+</div>
+
+<div align="center">[ <%= link_to "Cancel", products_path %> ]</div>

@@ -1,11 +1,10 @@
+<% provide(:body_class, "rocket-body") %>
 <div class="jumbotron container" align="center">
-  <h1>Rocket Supply</h1>
+  <h1 class="brand">Rocket Supply</h1>
   <p>A proud supplier of Tech Tac Slimline Tubing Anchor Catchers</p>
 
   <% if user_signed_in? %>
-  <div>
-    <h2><%= current_user.email %></h2>
-  </div>
+    <%= link_to "Products", products_path, class: "btn btn-lg btn-purple" %>
   <% else %>
     <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary btn-lg' %>
   <% end %>
